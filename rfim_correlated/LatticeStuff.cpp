@@ -90,7 +90,7 @@ void update_Bmat_gaussian(std::vector <float>& Bmat, double del)
 {
 	for (int i = 0; i < N; i++)
 	{
-		Bmat[i] = Bmat[i]*del/(float(delta_beg));
+		Bmat[i] = Bmat[i]*del/(float(del-delta_inc));
 		//std::cout << Bmat[i] << d;
 	}
 }
@@ -286,8 +286,8 @@ void savedata(std::vector< std::vector< float > > & Mat, int l, double del, std:
 //	std::mt19937 generator(rand_seed());
 //	std::uniform_int_distribution<long>  distribution(0,100);
 //	long rand_num = distribution(generator);
-	
-	std::ofstream fobj("./data/"+s + "-" + std::to_string(l) + "-" + std::to_string(delta1) + ".txt");
+	std::string fname = "./data/"+s + "-" + std::to_string(l) + "-" + std::to_string(delta1) + ".txt";
+	std::ofstream fobj(fname);
 //	std::ofstream fobj(s + "-" + std::to_string(l) + "-" + std::to_string(delta1) + "_" + std::to_string(rand_num) + ".txt");
 	//fobj << "iteration : " << l << "\ndelta : " << del << std::endl;
 	for (int i = 0; i < int(Mat.size()); i++)
@@ -315,7 +315,9 @@ void savedata(std::vector< int > & Mat,int l,double del,std::string s)
 //	std::uniform_int_distribution<long>  distribution(0,100);
 //	long rand_num = distribution(generator);
 	
-	std::ofstream fobj("./data/"+s+"-" + std::to_string(l) + "-" + std::to_string(delta1) + ".csv");
+	std::string fname = "./data/"+s+"-" + std::to_string(l) + "-" + std::to_string(delta1) + ".csv"; 
+	std::cout<<fname<<std::endl;
+	std::ofstream fobj(fname);
 //	std::ofstream fobj(s+"-" + std::to_string(l) + "-" + std::to_string(delta1) + "_" + std::to_string(rand_num) + ".csv");
 	//fobj << "iteration : " << l << "\ndelta : " << del << std::endl;
 
@@ -339,7 +341,8 @@ void savedata(std::vector< float > & Mat, int l, double del, std::string s)
 //	std::uniform_int_distribution<long>  distribution(0,100);
 //	long rand_num = distribution(generator);
 	
-	std::ofstream fobj("./data/"+s + "-" + std::to_string(l) + "-" + std::to_string(delta1) + ".csv");
+	std::string fname = "./data/"+s + "-" + std::to_string(l) + "-" + std::to_string(delta1) + ".csv";
+	std::ofstream fobj(fname);
 //	std::ofstream fobj(s + "-" + std::to_string(l) + "-" + std::to_string(delta1) + "_" + std::to_string(rand_num) + ".csv");
 	//fobj << "iteration : " << l << "\ndelta : " << del << std::endl;
 	

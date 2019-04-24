@@ -53,7 +53,7 @@ int main(void)
 			dfs(flow,0,visited);
 //			savedata(visited,iter,delta,"visited");
 			mag_ps = Magnetization(visited);
-			cout<<fixed_float(delta)<<"\t"<<fixed_float(energy)<<"\t\t"<<fixed_float(mag_ps)<<endl;
+			cout<<fixed_float(delta)<<"\t"<<fixed_float(energy)<<"\t\t"<<fixed_float(mag_ps)<<"\t";
 			
 //			savedata(CapacityMat,iter,delta,"Cap");
 			savedata(Bmat,iter,delta,"Phi");

@@ -31,7 +31,7 @@
 
 #define fixed_float(x) std::fixed <<std::setprecision(3)<<(x)
 
-#define VER 32
+#define VER 40
 #define N VER*VER
 #define tab	"\t"
 #define d ":"
@@ -42,4 +42,4 @@
 #define ITERS 1
 #define delta_beg 1.5
 #define delta_end 2.01
-#define delta_inc 0.05
+#define delta_inc 0.1

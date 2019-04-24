@@ -37,7 +37,7 @@ int main(void)
 					toten = Hamiltonian(occ,phi);
 					mag = Magnetization(occ);
 					
-					for (int rep=0; rep<100; rep++)
+					for (int rep=0; rep<1000; rep++)
 					{
 					double delta_h=0.0, delta_m=0.0, toten=0.0, mag=0.0, q=0.0;
 					
