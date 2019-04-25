@@ -182,7 +182,9 @@ void savedata(std::vector<std::vector<int>> & Mat,int itemp, float si, float phi
 //	std::uniform_int_distribution<long>  distribution(0,100);
 //	long rand_num = distribution(generator);
 	
-	std::ofstream fobj("./data_output/" + std::to_string(itemp) + "-" + std::to_string(iter) + "-" + std::to_string(delta1) + "-" + std::to_string(delta2) + "-" + std::to_string(rep) + ".csv");
+	std::string fname = "./data_output/" + std::to_string(itemp) + "-" + std::to_string(iter) + "-" + std::to_string(delta1) + "-" + std::to_string(delta2) + "-" + std::to_string(rep) + ".csv";
+	std::cout<<fname<<"\n";
+	std::ofstream fobj(fname);
 //	std::ofstream fobj(s+"-" + std::to_string(l) + "-" + std::to_string(delta1) + "_" + std::to_string(rand_num) + ".csv");
 	//fobj << "iteration : " << l << "\ndelta : " << del << std::endl;
 

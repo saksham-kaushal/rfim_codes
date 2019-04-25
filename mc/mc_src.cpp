@@ -34,12 +34,12 @@ int main(void)
 					std::vector<std::vector<int>> occ(VER,std::vector<int>(VER,0));
 					readSi(occ,si,iter);
 				
-					toten = Hamiltonian(occ,phi);
-					mag = Magnetization(occ);
-					
-					for (int rep=0; rep<1000; rep++)
+					for (int rep=0; rep<1; rep++)
 					{
 					double delta_h=0.0, delta_m=0.0, toten=0.0, mag=0.0, q=0.0;
+					
+					toten = Hamiltonian(occ,phi);
+					mag = Magnetization(occ);
 					
 					for(int itemp=0;itemp<NTEMP;itemp++)
 					{
@@ -75,7 +75,7 @@ int main(void)
 						}	//imeas loop
 						float magps = mag/float(NS);
 						q = get_q(occ_init,occ);
-						std::cout<<fixed_float(disorder)<<"\t"<<fixed_float(beta[itemp])<<"\t"<<fixed_float(toten_init)<<"\t"<<fixed_float(magps_init)<<"\t"<<fixed_float(toten)<<"\t"<<fixed_float(magps)<<"\t"<<fixed_float(q)<<"\t"<<fixed_float(si)<<"\t"<<fixed_float(itemp)<<std::endl;
+						std::cout<<fixed_float(disorder)<<"\t"<<fixed_float(beta[itemp])<<"\t"<<fixed_float(toten_init)<<"\t"<<fixed_float(magps_init)<<"\t"<<fixed_float(toten)<<"\t"<<fixed_float(magps)<<"\t"<<fixed_float(q)<<"\t"<<fixed_float(si)<<"\t"<<fixed_float(itemp)<<"\t";
 						savedata(occ,itemp,si,disorder,iter,rep+1);
 					}	//rep loop
 					}	//itemp loop
